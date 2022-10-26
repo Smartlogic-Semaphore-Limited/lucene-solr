@@ -7,5 +7,5 @@ smartlogic([
 ])
 
 def archive() {
-  archiveArtifacts(artifacts: "blackduck/dryrun/*", allowEmptyArchive: false)
+  archiveArtifacts(artifacts: "blackduck/*", allowEmptyArchive: false)
 }
