@@ -7,6 +7,6 @@ smartlogic([
 ])
 
 def archive() {
-  archiveArtifacts './blackduck-dryrun/*'
-  sh 'rm -rf ./blackduck-dryrun/*'
+  archiveArtifacts 'blackduck-dryrun/*'
+  sh 'rm -rf blackduck-dryrun/*'
 }
