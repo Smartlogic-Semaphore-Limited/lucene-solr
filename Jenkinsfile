@@ -3,7 +3,11 @@ smartlogic([
   settings: [
     blackduck: [scan: [args: "--detect.excluded.detector.types='pip,gradle' detect.blackduck.signature.scanner.dry.run=true --detect.blackduck.signature.scanner.arguments='--dryRunWriteDir=/root/blackduck/dryrun'"]],
   ],
-  archive: {archive()}
+  archive: {archive()},
+  buildWrapper: {
+    sh "chown -R root ./"
+    it()
+  }
 ])
 
 def archive() {
