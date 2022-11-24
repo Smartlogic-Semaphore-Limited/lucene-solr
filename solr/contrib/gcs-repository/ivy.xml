@@ -37,6 +37,7 @@
     <dependency org="com.google.code.gson" name="gson" rev="${/com.google.code.gson/gson}" conf="compile"/>
     <dependency org="com.google.errorprone" name="error_prone_annotations" rev="${/com.google.errorprone/error_prone_annotations}" conf="compile"/>
     <dependency org="com.google.http-client" name="google-http-client" rev="${/com.google.http-client/google-http-client}" conf="compile"/>
+    <dependency org="com.google.http-client" name="google-http-client-gson" rev="${/com.google.http-client/google-http-client-gson}" conf="compile"/>
     <dependency org="com.google.http-client" name="google-http-client-appengine" rev="${/com.google.http-client/google-http-client-appengine}" conf="compile"/>
     <dependency org="com.google.http-client" name="google-http-client-jackson2" rev="${/com.google.http-client/google-http-client-jackson2}" conf="compile"/>
     <dependency org="com.google.j2objc" name="j2objc-annotations" rev="${/com.google.j2objc/j2objc-annotations}" conf="compile"/>

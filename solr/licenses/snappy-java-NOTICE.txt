@@ -14,4 +14,3 @@ http://gcc.gnu.org/onlinedocs/libstdc++/manual/license.html
     * Providing benchmark suite
   * Alec Wysoker
     * Performance and memory usage improvement
-

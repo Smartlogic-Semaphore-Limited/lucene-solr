@@ -26,6 +26,12 @@
     <dependency org="joda-time" name="joda-time" rev="${/joda-time/joda-time}" conf="compile"/>
     <dependency org="com.fasterxml.woodstox" name="woodstox-core" rev="${/com.fasterxml.woodstox/woodstox-core}" conf="compile"/>
     <dependency org="org.codehaus.woodstox" name="stax2-api" rev="${/org.codehaus.woodstox/stax2-api}" conf="compile"/>
+    <dependency org="biz.aQute.bnd" name="biz.aQute.bnd.annotation" rev="${/biz.aQute.bnd/biz.aQute.bnd.annotation}" conf="compile"/>
+    <dependency org="org.osgi" name="org.osgi.resource" rev="${/org.osgi/org.osgi.resource}" conf="compile"/>
+    <dependency org="org.osgi" name="org.osgi.service.serviceloader" rev="${/org.osgi/org.osgi.service.serviceloader}" conf="compile"/>
+    <dependency org="org.osgi" name="osgi.annotation" rev="${/org.osgi/osgi.annotation}" conf="compile"/>
+    <dependency org="org.osgi" name="org.osgi.namespace.extender" rev="${/org.osgi/org.osgi.namespace.extender}" conf="compile"/>
+    <dependency org="org.osgi" name="org.osgi.namespace.service" rev="${/org.osgi/org.osgi.namespace.service}" conf="compile"/>
     <dependency org="org.reactivestreams" name="reactive-streams" rev="${/org.reactivestreams/reactive-streams}" conf="compile"/>
     <dependency org="software.amazon.awssdk" name="annotations" rev="${/software.amazon.awssdk/annotations}" conf="compile"/>
     <dependency org="software.amazon.awssdk" name="apache-client" rev="${/software.amazon.awssdk/apache-client}" conf="compile"/>
@@ -62,6 +68,7 @@
     <dependency org="jakarta.servlet" name="jakarta.servlet-api" rev="${/jakarta.servlet/jakarta.servlet-api}" conf="test"/>
     <dependency org="jakarta.websocket" name="jakarta.websocket-api" rev="${/jakarta.websocket/jakarta.websocket-api}" conf="test"/>
     <dependency org="jakarta.xml.bind" name="jakarta.xml.bind-api" rev="${/jakarta.xml.bind/jakarta.xml.bind-api}" conf="test"/>
+    <dependency org="jakarta.activation" name="jakarta.activation-api" rev="${/jakarta.activation/jakarta.activation-api}" conf="test"/>
     <dependency org="org.apache.httpcomponents" name="httpcore" rev="${/org.apache.httpcomponents/httpcore}" conf="test"/>
     <dependency org="org.glassfish" name="jakarta.el" rev="${/org.glassfish/jakarta.el}" conf="test"/>
     <dependency org="org.hdrhistogram" name="HdrHistogram" rev="${/org.hdrhistogram/HdrHistogram}" conf="test"/>
