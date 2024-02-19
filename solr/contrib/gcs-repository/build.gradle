@@ -40,6 +40,7 @@ dependencies {
     implementation('com.google.code.findbugs:jsr305') { transitive = false }
     implementation('com.google.code.gson:gson') { transitive = false }
     implementation('com.google.http-client:google-http-client') { exclude group: 'com.google.guava', module: 'guava' }
+    implementation('com.google.http-client:google-http-client-gson') { transitive = false }
     implementation('com.google.http-client:google-http-client-appengine') { transitive = false }
     implementation('com.google.http-client:google-http-client-jackson2') { transitive = false }
     implementation('com.google.j2objc:j2objc-annotations') { transitive = false }
