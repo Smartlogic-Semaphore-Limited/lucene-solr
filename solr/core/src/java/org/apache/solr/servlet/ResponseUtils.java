@@ -70,7 +70,8 @@ public class ResponseUtils {
       StringWriter sw = new StringWriter();
       ex.printStackTrace(new PrintWriter(sw));
       SolrException.log(log, ex);
-      info.add("trace", sw.toString());
+      // Do not include the stacktraces into the response body
+//      info.add("trace", sw.toString());
 
       // non standard codes have undefined results with various servers
       if (code < 100) {
