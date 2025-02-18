@@ -46,6 +46,7 @@ import org.apache.hadoop.io.nativeio.NativeIO;
 import org.apache.hadoop.metrics2.MetricsSystem;
 import org.apache.hadoop.metrics2.impl.MetricsSystemImpl;
 import org.apache.hadoop.metrics2.lib.DefaultMetricsSystem;
+import org.apache.hadoop.util.DiskChecker;
 import org.apache.lucene.util.Constants;
 import org.apache.lucene.util.LuceneTestCase;
 import org.apache.solr.SolrTestCaseJ4;
@@ -117,7 +118,7 @@ public class HdfsTestUtil {
    * Ensure that the tests are picking up the modified Hadoop classes
    */
   private static void checkOverriddenHadoopClasses() {
-    List<Class<?>> modifiedHadoopClasses = Arrays.asList(NameNodeResourceChecker.class);
+    List<Class<?>> modifiedHadoopClasses = Arrays.asList(DiskChecker.class, NameNodeResourceChecker.class);
     for (Class<?> clazz : modifiedHadoopClasses) {
       try {
         LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
