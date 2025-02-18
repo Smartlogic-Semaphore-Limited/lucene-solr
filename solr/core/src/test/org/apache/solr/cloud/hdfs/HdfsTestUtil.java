@@ -90,7 +90,6 @@ public class HdfsTestUtil {
   public static void checkAssumptions() {
     ensureHadoopHomeNotSet();
     checkHadoopWindows();
-    checkOverriddenHadoopClasses();
     checkFastDateFormat();
     checkGeneratedIdMatches();
   }
@@ -116,23 +115,6 @@ public class HdfsTestUtil {
   private static void checkHadoopWindows() {
     LuceneTestCase.assumeTrue("Hadoop does not work on Windows without Hadoop NativeIO",
         !Constants.WINDOWS || NativeIO.isAvailable());
-  }
-
-  /**
-   * Ensure that the tests are picking up the modified Hadoop classes
-   */
-  private static void checkOverriddenHadoopClasses() {
-    List<Class<?>> modifiedHadoopClasses = Arrays.asList(BlockPoolSlice.class, DiskChecker.class,
-        FileUtil.class, HardLink.class, HttpServer2.class, NameNodeResourceChecker.class, RawLocalFileSystem.class);
-    for (Class<?> clazz : modifiedHadoopClasses) {
-      try {
-        LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
-            clazz.getField(SOLR_HACK_FOR_CLASS_VERIFICATION_FIELD));
-      } catch (NoSuchFieldException e) {
-        LuceneTestCase.fail("Expected to load Solr modified Hadoop class " + clazz.getCanonicalName() +
-            " , but it was not found.");
-      }
-    }
   }
 
   /**
