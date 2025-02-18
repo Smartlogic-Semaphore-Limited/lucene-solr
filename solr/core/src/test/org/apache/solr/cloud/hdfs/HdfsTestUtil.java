@@ -19,6 +19,7 @@ package org.apache.solr.cloud.hdfs;
 import java.io.File;
 import java.lang.invoke.MethodHandles;
 import java.net.URI;
+import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
@@ -115,7 +116,7 @@ public class HdfsTestUtil {
    * Ensure that the tests are picking up the modified Hadoop classes
    */
   private static void checkOverriddenHadoopClasses() {
-    List<Class<?>> modifiedHadoopClasses = List.of(NameNodeResourceChecker.class);
+    List<Class<?>> modifiedHadoopClasses = Arrays.asList(NameNodeResourceChecker.class);
     for (Class<?> clazz : modifiedHadoopClasses) {
       try {
         LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
