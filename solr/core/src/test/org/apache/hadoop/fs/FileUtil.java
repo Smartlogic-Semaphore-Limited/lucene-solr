@@ -89,6 +89,7 @@ import static org.apache.hadoop.util.functional.FutureIO.awaitFuture;
 @InterfaceAudience.Public
 @InterfaceStability.Evolving
 public class FileUtil {
+  public static final Object SOLR_HACK_FOR_CLASS_VERIFICATION = new Object();
 
   private static final Logger LOG = LoggerFactory.getLogger(FileUtil.class);
 

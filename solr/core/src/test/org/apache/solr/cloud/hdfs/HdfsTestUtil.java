@@ -35,6 +35,7 @@ import org.apache.commons.lang3.time.FastDateFormat;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
+import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
 import org.apache.hadoop.hdfs.MiniDFSNNTopology;
@@ -118,7 +119,8 @@ public class HdfsTestUtil {
    * Ensure that the tests are picking up the modified Hadoop classes
    */
   private static void checkOverriddenHadoopClasses() {
-    List<Class<?>> modifiedHadoopClasses = Arrays.asList(DiskChecker.class, NameNodeResourceChecker.class);
+    List<Class<?>> modifiedHadoopClasses = Arrays.asList(DiskChecker.class, FileUtil.class,
+        NameNodeResourceChecker.class);
     for (Class<?> clazz : modifiedHadoopClasses) {
       try {
         LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
