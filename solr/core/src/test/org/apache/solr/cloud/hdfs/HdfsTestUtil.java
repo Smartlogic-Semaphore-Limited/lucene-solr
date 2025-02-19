@@ -37,6 +37,7 @@ import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.FileUtil;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.fs.RawLocalFileSystem;
 import org.apache.hadoop.hdfs.MiniDFSCluster;
 import org.apache.hadoop.hdfs.MiniDFSNNTopology;
 import org.apache.hadoop.hdfs.server.datanode.fsdataset.impl.BlockPoolSlice;
@@ -120,7 +121,7 @@ public class HdfsTestUtil {
    */
   private static void checkOverriddenHadoopClasses() {
     List<Class<?>> modifiedHadoopClasses = Arrays.asList(DiskChecker.class, FileUtil.class,
-        NameNodeResourceChecker.class);
+        NameNodeResourceChecker.class, RawLocalFileSystem.class);
     for (Class<?> clazz : modifiedHadoopClasses) {
       try {
         LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
