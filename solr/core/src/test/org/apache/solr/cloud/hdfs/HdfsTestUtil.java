@@ -120,8 +120,8 @@ public class HdfsTestUtil {
    * Ensure that the tests are picking up the modified Hadoop classes
    */
   private static void checkOverriddenHadoopClasses() {
-    List<Class<?>> modifiedHadoopClasses = Arrays.asList(DiskChecker.class, FileUtil.class,
-        NameNodeResourceChecker.class, RawLocalFileSystem.class);
+    List<Class<?>> modifiedHadoopClasses = Arrays.asList(BlockPoolSlice.class, DiskChecker.class,
+        FileUtil.class, NameNodeResourceChecker.class, RawLocalFileSystem.class);
     for (Class<?> clazz : modifiedHadoopClasses) {
       try {
         LuceneTestCase.assertNotNull("Field on " + clazz.getCanonicalName() + " should not have been null",
