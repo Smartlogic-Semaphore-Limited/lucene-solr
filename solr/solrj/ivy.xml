@@ -65,6 +65,7 @@
     <dependency org="io.netty" name="netty-resolver" rev="${/io.netty/netty-resolver}" conf="compile"/>
     <dependency org="io.netty" name="netty-buffer" rev="${/io.netty/netty-buffer}" conf="compile"/>
     <dependency org="io.netty" name="netty-codec" rev="${/io.netty/netty-codec}" conf="compile"/>
+    <dependency org="io.netty" name="netty-codec-http" rev="${/io.netty/netty-codec-http}" conf="compile"/>
     <dependency org="io.netty" name="netty-handler" rev="${/io.netty/netty-handler}" conf="compile"/>
     <dependency org="io.netty" name="netty-transport" rev="${/io.netty/netty-transport}" conf="compile"/>
     <dependency org="io.netty" name="netty-transport-native-epoll" rev="${/io.netty/netty-transport-native-epoll}" conf="compile"/>
