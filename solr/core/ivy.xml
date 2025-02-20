@@ -81,6 +81,7 @@
     <dependency org="org.apache.hadoop" name="hadoop-annotations" rev="${/org.apache.hadoop/hadoop-annotations}" conf="compile.hadoop"/>
 
     <dependency org="org.apache.hadoop.thirdparty" name="hadoop-shaded-guava" rev="${/org.apache.hadoop.thirdparty/hadoop-shaded-guava}" conf="compile.hadoop"/>
+    <dependency org="org.apache.hadoop.thirdparty" name="hadoop-shaded-protobuf_3_25" rev="${/org.apache.hadoop.thirdparty/hadoop-shaded-protobuf_3_25}" conf="compile.hadoop"/>
 
     <dependency org="org.apache.commons" name="commons-configuration2" rev="${/org.apache.commons/commons-configuration2}" conf="compile.hadoop"/>
     <dependency org="commons-collections" name="commons-collections" rev="${/commons-collections/commons-collections}" conf="compile.hadoop"/>
