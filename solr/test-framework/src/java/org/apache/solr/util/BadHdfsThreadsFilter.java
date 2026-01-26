@@ -39,6 +39,10 @@ public class BadHdfsThreadsFilter implements ThreadFilter {
       return true;
     } else if (name.startsWith("solr-hdfs-threadpool-")) { // SOLR-9515 and HDFS-14251
       return true;
+    } else if (name.equals("SSL Certificates Store Monitor")) { // Hadoop 3.4.2 SSL monitoring
+      return true;
+    } else if (name.startsWith("GcTimeMonitor")) { // Hadoop 3.4.2 GC monitoring
+      return true;
     }
     
     return false;
