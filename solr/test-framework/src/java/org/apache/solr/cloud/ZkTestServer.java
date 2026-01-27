@@ -119,7 +119,7 @@ public class ZkTestServer {
     private volatile ServerCnxnFactory cnxnFactory;
     private volatile ZooKeeperServer zooKeeperServer;
     private volatile LimitViolationAction violationReportAction = LimitViolationAction.REPORT;
-    private volatile WatchLimiter limiter = new WatchLimiter(1, LimitViolationAction.IGNORE);
+    private volatile WatchLimiter limiter = new WatchLimiter(25, LimitViolationAction.IGNORE); // Increased for ZK 3.8.4 compatibility (max observed: 14)
 
     protected void initializeAndRun(String[] args) throws ConfigException,
         IOException {
