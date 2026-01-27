@@ -17,6 +17,7 @@
 package org.apache.solr.cloud;
 
 import com.google.common.util.concurrent.AtomicLongMap;
+import org.apache.commons.io.FileUtils;
 
 import org.apache.solr.SolrTestCaseJ4;
 import org.apache.solr.common.cloud.SolrZkClient;
@@ -437,6 +438,18 @@ public class ZkTestServer {
   public ZkTestServer(Path zkDir, int port) throws KeeperException, InterruptedException {
     this.zkDir = zkDir;
     this.clientPort = port;
+    
+    // Clean ZooKeeper data directory on construction to prevent incompatibility
+    // issues with persisted snapshots from different Hadoop/ZK versions (e.g., delegation tokens)
+    if (zkDir != null && zkDir.toFile().exists()) {
+      try {
+        FileUtils.cleanDirectory(zkDir.toFile());
+        log.info("Cleaned ZooKeeper data directory on construction: {}", zkDir);
+      } catch (IOException e) {
+        log.warn("Failed to clean ZooKeeper data directory: {}", zkDir, e);
+      }
+    }
+    
     String reportAction = System.getProperty("tests.zk.violationReportAction");
     if (reportAction != null) {
       log.info("Overriding violation report action to: {}", reportAction);
