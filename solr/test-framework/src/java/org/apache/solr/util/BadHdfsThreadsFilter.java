@@ -43,6 +43,8 @@ public class BadHdfsThreadsFilter implements ThreadFilter {
       return true;
     } else if (name.startsWith("GcTimeMonitor")) { // Hadoop 3.4.2 GC monitoring
       return true;
+    } else if (name.startsWith("Curator-SafeNotifyService")) { // Curator-SafeNotifyService
+      return true;
     }
     
     return false;
